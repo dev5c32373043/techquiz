@@ -1,7 +1,10 @@
 # Nuxt 3 Hello world
 
 TechQuiz is a platform designed to assess the technical skills and knowledge of developers.
-It is built using [Nuxt][nuxt] and [MongoDB][mongo].
+It is built using [Nuxt 3][nuxt] and [MongoDB][mongo].
+
+[preview](https://github.com/dev5c32373043/techquiz/assets/13788002/182641ac-e0bf-4dcf-a7b6-36b0c4976a56)
+
 
 ## Getting started
 
