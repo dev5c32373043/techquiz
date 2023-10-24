@@ -40,6 +40,7 @@ async function onSubmit(ev) {
 
     const withCopy = ev.submitter?.dataset?.withCopy === 'true';
     props.onCreate(data, withCopy);
+    clearNuxtData(baseUrl);
   }
 
   if (action === 'update') {
@@ -52,6 +53,7 @@ async function onSubmit(ev) {
 
     linkTmp.value = data;
     props.onUpdate(data);
+    clearNuxtData(baseUrl);
   }
 
   reqState.status = 'idle';

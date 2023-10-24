@@ -44,6 +44,7 @@ async function removeLink(linkId) {
   }
 
   links.value = links.value.filter(l => l._id !== linkId);
+  clearNuxtData(baseUrl);
   $toast.success('Link removed!');
 }
 </script>

@@ -82,6 +82,7 @@ async function applyChanges() {
 
   $toast.success('Changes successfully applied!');
   changesToApply.value = { added: new Map(), updated: new Map(), removed: new Set() };
+  clearNuxtData(baseUrl.value);
   fetchQuestions();
 }
 
