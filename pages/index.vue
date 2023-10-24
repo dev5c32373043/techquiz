@@ -12,23 +12,33 @@ import { useCodeClient } from 'vue3-google-signin';
 
 const { $toast } = useNuxtApp();
 
+let reqState = reactive({ status: 'idle' });
+
 const onSuccess = async ({ code }) => {
   const [err, resp] = await to($fetch('/api/auth/user/google/verify', { method: 'POST', body: { code } }));
   if (err) {
     $toast.error('Failed to login. Please try again');
+    reqState.status = 'idle';
     return;
   }
 
   if (resp.ok) {
     await navigateTo('/quizzes');
+    reqState.status = 'idle';
   }
 };
 
-const onError = errorResponse => {
+const onError = () => {
+  reqState.status = 'idle';
   $toast.error('Failed to login. Please try again');
 };
 
 const { isReady, login } = useCodeClient({ onSuccess, onError });
+
+function onSignInBtnClick() {
+  reqState.status = 'pending';
+  login();
+}
 </script>
 
 <template>
@@ -45,7 +55,10 @@ const { isReady, login } = useCodeClient({ onSuccess, onError });
           Introducing TechQuiz: Your Ultimate Developer Knowledge Assessment Tool!
         </h3>
         <p class="py-6">TechQuiz empowers you to comprehensively evaluate developer expertise like never before.</p>
-        <button class="btn btn-secondary" @click="login" :disabled="!isReady">Login with Google</button>
+        <button class="btn btn-secondary" @click="onSignInBtnClick" :disabled="!isReady">
+          <span class="loading loading-spinner" v-if="reqState.status === 'pending'"></span>
+          Login with Google
+        </button>
       </div>
     </div>
 
