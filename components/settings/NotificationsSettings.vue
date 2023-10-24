@@ -18,7 +18,7 @@ async function onSubmit() {
 
 const url = useRequestURL();
 const query = new URLSearchParams({
-  client_id: '5980373488213.5995065493303',
+  client_id: config.public.slackClientId,
   scope: 'channels:read,channels:join,chat:write',
   redirect_uri: `${config.public.host}/api/auth/user/slack/install`
 });

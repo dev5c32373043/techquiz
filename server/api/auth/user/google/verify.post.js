@@ -40,7 +40,6 @@ export default defineEventHandler(async event => {
   setCookie(event, 'accessToken', access_token, {
     secure: true,
     httpOnly: true,
-    sameSite: true,
     maxAge: 60 * 60 * 24 * 90
   });
 

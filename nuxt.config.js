@@ -16,6 +16,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       host: process.env.HOST,
+      slackClientId: process.env.SLACK_CLIENT_ID,
       googleSignIn: {
         // Sometimes, environmental variables are not loaded properly
         clientId: process.env.GOOGLE_CLIENT_ID
