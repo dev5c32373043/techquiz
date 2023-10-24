@@ -10,7 +10,7 @@ const { currentTab, switchTab } = useTabs(['single', 'multi', 'code'], question.
     }
 
     if (newVal === 'code') {
-      question.value.code = { lang: 'JS', content: '' };
+      question.value.code = { lang: 'javascript', content: '' };
     }
 
     question.value.variant = newVal;

@@ -39,7 +39,7 @@ function addQuestion() {
     _id: tmpId,
     title: `question #${tmpId}`,
     variant: 'single',
-    code: { lang: 'JS', content: '' },
+    code: { lang: 'javascript', content: '' },
     options: [{ id: 1, value: '', isSelected: true }]
   };
 
