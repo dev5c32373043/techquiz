@@ -1,10 +1,11 @@
 <script setup>
 const emit = defineEmits(['onUpdate']);
 const question = inject('selectedQuestion');
-const { variant } = question.value;
 
 const { currentTab, switchTab } = useTabs(['single', 'multi', 'code'], question.value.variant, {
   onSelect(newVal) {
+    if (question.value.variant === newVal) return;
+
     if (question.value.variant === 'code') {
       question.value.code.content = '';
     }
