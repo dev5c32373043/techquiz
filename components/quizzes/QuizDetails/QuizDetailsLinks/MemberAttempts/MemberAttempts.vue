@@ -4,7 +4,7 @@ import duration from 'dayjs/plugin/duration';
 
 dayjs.extend(duration);
 
-const props = defineProps({ response: { type: Object, required: true } });
+defineProps({ response: { type: Object, required: true } });
 </script>
 
 <template>

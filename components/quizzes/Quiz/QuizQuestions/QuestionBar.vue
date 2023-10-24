@@ -1,6 +1,6 @@
 <script setup>
 const selected = inject('selectedQuestion');
-const props = defineProps({ questions: { type: Array, required: true } });
+defineProps({ questions: { type: Array, required: true } });
 
 const emit = defineEmits(['onSelect']);
 
