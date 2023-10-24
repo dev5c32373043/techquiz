@@ -53,7 +53,7 @@ const { isReady, login } = useCodeClient({ onSuccess, onError });
       class="tooltip tooltip-info tooltip-left fixed right-5 bottom-5"
       data-tip="Cookies are our secret sauce for a better website"
     >
-      <button class="btn btn-link"><img src="cookie.png" width="48" height="48" /></button>
+      <button class="btn btn-link"><img src="/cookie.png" width="48" height="48" /></button>
     </div>
   </main>
 </template>
